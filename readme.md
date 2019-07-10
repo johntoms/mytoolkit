@@ -13,3 +13,44 @@ python3
 天地未形，笼罩一切、充塞寰宇者，实为一相，今名之曰混沌。
 万物之先有混沌，随后诞生了大地之母盖亚（Gaea）、地狱深渊神塔耳塔洛斯（Tartarus）、爱神厄洛斯（Eros）。
 之后卡俄斯生下黑暗神厄瑞波斯（Erebus）与黑夜女神尼克斯（Nyx）。世界由此开始。
+
+
+## 文件预览
+```markdown
+.
+├── Chaos
+│   ├── CloudToolkit
+│   │   ├── Acloud
+│   │   │   ├── __init__.py
+│   │   │   ├── ucloud_client.py
+│   │   │   └── ucloud_common.py
+│   │   ├── Aliyun
+│   │   │   ├── __init__.py
+│   │   │   ├── aliyun_client.py
+│   │   │   ├── aliyun_common.py
+│   │   │   └── aliyun_oss.py
+│   │   ├── AmazonCloud
+│   │   │   ├── __init__.py
+│   │   │   └── aws_client.py
+│   │   ├── TencentCloud
+│   │   │   ├── __init__.py
+│   │   │   ├── tencentcloud_client.py
+│   │   │   └── tencentcloud_common.py
+│   │   └── __init__.py
+│   ├── ContvertFile
+│   │   ├── __init__.py
+│   │   └── csv_to_execl.py
+│   ├── __init__.py
+│   ├── gen_time.py
+│   └── mysql_datebase_export.py
+├── README
+│   ├── Chaos-toolkit-function.md
+│   └── CloudReadme
+│       └── aliyun-product.md
+├── demo.py
+├── readme.md
+└── requirements.txt
+
+9 directories, 23 files
+
+```
