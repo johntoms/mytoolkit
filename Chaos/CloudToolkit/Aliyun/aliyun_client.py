@@ -4,8 +4,8 @@
 __Author__ = 'JohnToms'
 __CreateTime__ = '2019/4/16'
 """
-from Chaos.CloudToolkit.aliyun.aliyun_common import AliyunCommon
-from Chaos.CloudToolkit.aliyun.aliyun_oss import AliyunOSS
+from Chaos.CloudToolkit.Aliyun.aliyun_common import AliyunCommon
+from Chaos.CloudToolkit.Aliyun.aliyun_oss import AliyunOSS
 from .. import retry_for_requests
 
 
