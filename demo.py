@@ -9,10 +9,10 @@ from Chaos import Chaos
 import time
 import datetime
 import os
-# AK = {
-#     "AccessKeyId": os.environ.get("AccessKeyId", "example"),
-#     "AccessKeySecret": os.environ.get("AccessKeySecret", "example")
-# }
+AK = {
+    "AccessKeyId": os.environ.get("AccessKeyId", "example"),
+    "AccessKeySecret": os.environ.get("AccessKeySecret", "example")
+}
 
 
 # client  = AliyunClient(AK)
@@ -31,10 +31,10 @@ import os
 
 
 # 1. 创建 client
-AK = {
-    "AccessKeyId":"",
-    "AccessKeySecret": "",
-}
+# AK = {
+#     "AccessKeyId":"",
+#     "AccessKeySecret": "",
+# }
 # ucloud_client = Chaos.TencentClient(AK)
 #
 # print(ucloud_client.common('cvm', Action='DescribeRegions'))
@@ -46,9 +46,10 @@ AK = {
 # print(Chaos.AliyunClient(AK).common('ecs', Action='DescribeRegions'))
 
 ## 华东二金融云
-start_time = datetime.datetime.strftime(datetime.datetime.utcnow(),'%Y-%m-%dT%H:%M:%SZ')
-end_time = datetime.datetime.strftime(datetime.datetime.utcnow(), '%Y-%m-%dT%H:%M:%SZ')
+# start_time = datetime.datetime.strftime(datetime.datetime.utcnow(),'%Y-%m-%dT%H:%M:%SZ')
+# end_time = datetime.datetime.strftime(datetime.datetime.utcnow(), '%Y-%m-%dT%H:%M:%SZ')
 ## cn-shanghai-finance-1
-print(Chaos.AliyunClient(AK).common('rds', Action='DescribeDBInstances', RegionId='cn-shanghai'))
-print(Chaos.AliyunClient(AK).common('rds', Action='DescribeSlowLogRecords', DBInstanceId='rm-uf679e820jx04jnvx',StartTime='2019-06-14T08:40Z', EndTime='2019-06-14T09:40Z'))
-print(time.time())
+# print(Chaos.AliyunClient(AK).common('rds', Action='DescribeDBInstances', RegionId='cn-shanghai'))
+# print(Chaos.AliyunClient(AK).common('rds', Action='DescribeSlowLogRecords', DBInstanceId='rm-e820jx04jnvx',StartTime='2019-06-14T08:40Z', EndTime='2019-06-14T09:40Z'))
+# print(time.time())
+print(Chaos.AliyunClient(AK).common('cms', Action='DescribeMetricMetaList', Namespace='acs_ecs_dashboard'))

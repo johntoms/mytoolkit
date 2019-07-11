@@ -4,7 +4,7 @@
 **产品限制：**
 - 该接口仅适用于`少次`、`不频繁`、`低速`,其他限制及详细说明，请参考[阿里云官方文档](https://aliyun.com)
 - 具体传参请参考官方文档。
-- 若需要添加或更新调用的 API 接口信息，请查看`Chaos/CloudToolkit/aliyun/` 文件,修改或添加`PRODUCT_API_CONFIG_MAP`中的字段。
+- 若需要添加或更新调用的 API 接口信息，请查看`Chaos/CloudToolkit/Aliyun/aliyun_common.py` 文件,修改或添加`PRODUCT_API_CONFIG_MAP`中的字段。
 
 API 接口详情如下：
 
