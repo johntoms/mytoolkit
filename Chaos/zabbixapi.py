@@ -13,13 +13,6 @@ from pyzabbix import ZabbixAPI
 # Project Packages
 
 
-config  =  {
-        'API_URL': os.environ.get('API_URL'),
-        'USER': os.environ.get('USER'),
-        'PASSWORD': os.environ.get('PASSWORD')
-}
-
-
 class ZBX_API(object):
     def __init__(self, url, user, password):
         self.api = ZabbixAPI(url)
@@ -34,12 +27,17 @@ class ZBX_API(object):
         print("exit")
 
 
-# 实例化一个 api 对象
-api = ZBX_API(user=config['USER'], url=config['API_URL'], password=config['PASSWORD'])
+if __name__ == '__main__':
+    config = {
+        'API_URL': os.environ.get('API_URL'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD')
+    }
 
-# 使用 with 进行操作，执行完后后会自动退出 zabbix，保证 zabbix 的 token 不会爆炸
+    # 实例化一个 api 对象
+    api = ZBX_API(user=config['USER'], url=config['API_URL'], password=config['PASSWORD'])
 
-
-with api as f:
-    host_ids = f.host.get(output='hostids')
-    print(host_ids)
+    # 使用 with 进行操作，执行完后后会自动退出 zabbix，保证 zabbix 的 token 不会爆炸
+    with api as f:
+        host_ids = f.host.get(output='hostids')
+        print(host_ids)

@@ -8,6 +8,7 @@ __CreateTime__ = '2019/4/16'
 from Chaos import Chaos
 import time
 import datetime
+from Chaos.zabbixapi import ZBX_API
 import os
 AK = {
     "AccessKeyId": os.environ.get("AccessKeyId", "example"),
@@ -52,4 +53,18 @@ AK = {
 # print(Chaos.AliyunClient(AK).common('rds', Action='DescribeDBInstances', RegionId='cn-shanghai'))
 # print(Chaos.AliyunClient(AK).common('rds', Action='DescribeSlowLogRecords', DBInstanceId='rm-e820jx04jnvx',StartTime='2019-06-14T08:40Z', EndTime='2019-06-14T09:40Z'))
 # print(time.time())
+# 实例化一个 api 对象
+config = {
+        'API_URL': os.environ.get('API_URL'),
+        'USER': os.environ.get('USER'),
+        'PASSWORD': os.environ.get('PASSWORD')
+    }
+api = ZBX_API(user=config['USER'], url=config['API_URL'], password=config['PASSWORD'])
+
+# 使用 with 进行操作，执行完后后会自动退出 zabbix，保证 zabbix 的 token 不会爆炸
+with api as f:
+    host_ids = f.host.get(output='hostids')
+    print(host_ids)
+
+
 print(Chaos.AliyunClient(AK).common('cms', Action='DescribeMetricMetaList', Namespace='acs_ecs_dashboard'))
